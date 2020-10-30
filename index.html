@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/style.css">
+    <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
     <script src="./script/script.js"></script>
     <title>Amazing app test</title>
 </head>
 <body>
+    <div class="modal">
+        <div class="shadow"></div>
+        <div class="desktope-data-popup">
+            <form class="request-demo">
+                <p class="title">Request Demo</p>
+                <div class="request-info">
+                    <input type="text" placeholder="Name" class="request-demo__name">
+                    <input type="text" placeholder="Email" class="request-demo__email">
+                    <input type="text" placeholder="Web" class="request-demo__web">
+                </div>
+                <div class="request-message">
+                    <textarea placeholder="Messadge" type="text" class="request-demo__message"></textarea>
+                </div>
+                <button type="submit" class="button button-learn">Send</button>
+            </form>
+        </div>
+    </div>
     <header class="header container">
         <a href="/" title="home" class="logo"><img src="./assets/img/logo.svg" alt="logo"></a>
         <div class="nav">
@@ -54,28 +73,28 @@
                 <div class="card__content">
                     <p class="card__heading">Search Data</p>
                     <p class="sub-title">Don’t worry if your data is very large, the Data Warehoue provides a search engine, which is useful for making it easier to find data effectively saving time.</p>
-                    <button class="button button-request">Learn more</button>
+                    <a href="#" title="learn more" class="button button-request">Learn more</a>
                 </div> 
             </div>
             <div class="card">
                 <div class="card__content">
                     <p class="card__heading">Security Code</p>
                     <p class="sub-title">Data Security is one of our best facilities. Allows for your files to be safer. The file can be secured with a code or password that you created, so only you can open the file.</p>
-                    <button class="button button-request">Learn more</button>
+                    <a href="#" title="learn more" class="button button-request">Learn more</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card__content">
                     <p class="card__heading">Print Out</p>
                     <p class="sub-title">Print out service gives you convenience if someday you need print data, just edit it all and just print it.</p>
-                    <button class="button button-request">Learn more</button>
+                    <a href="#" title="learn more" class="button button-request">Learn more</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card__content">
                     <p class="card__heading">24 Hours Access</p>
                     <p class="sub-title">Access is given 24 hours a full morning to night and meet again in the morning, giving you comfort when you need data when urgent.</p>
-                    <button class="button button-request">Learn more</button>
+                    <a href="#" title="learn more" class="button button-request">Learn more</a>
                 </div>
             </div>
         </div>
@@ -125,9 +144,7 @@
                 </div>
             </div>
         </div>
-        <p class="footer-copy-right">
-            © Datawarehouse™, 2020. All rights reserved.<br>Company Registration Number: 21479524.
-        </p>
+        <p class="footer-copy-right">© Datawarehouse™, 2020. All rights reserved.<br>Company Registration Number: 21479524.</p>
     </footer>
 </body>
 </html>
