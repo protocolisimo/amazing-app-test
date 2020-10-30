@@ -269,3 +269,71 @@ header {
                 opacity: 1;
             }
 /* END: slider *********************************************************************************************/
+
+
+/* features *********************************************************************************************/
+
+.features  {
+    margin-top: 87px;
+}
+    .features > .title,
+    .features > .sub-title {
+        text-align: center;
+    }
+    
+    .features > .sub-title {
+        margin-top: 26px;
+    }
+
+    .features .card-wrapper {
+        margin-top: 41px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+        .features .card-wrapper .card {
+            width: calc(50% - 25px);
+            min-height: 380px;
+            background-size: contain;
+            background-position: top right;
+            background-repeat: no-repeat;
+            margin-bottom: 80px;
+            padding:  49px 50px 33px 0;
+        }
+            .features .card-wrapper .card:first-child { background-image: url('../assets/img/cards/card-bg-1.png'); }
+            .features .card-wrapper .card:nth-child(2) { background-image: url('../assets/img/cards/card-bg-2.png'); }
+            .features .card-wrapper .card:nth-child(3) { background-image: url('../assets/img/cards/card-bg-3.png'); }
+            .features .card-wrapper .card:nth-child(4) { background-image: url('../assets/img/cards/card-bg-4.png'); }
+            
+            .features .card-wrapper .card .card__content {
+                height: calc(100% - 33px);
+                max-width: 220px;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+            }
+                .features .card-wrapper .card .card__content .card__heading {
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 130%;
+                    color: #212353;
+                    margin-bottom: 20px;
+                }
+
+                .features .card-wrapper .card .card__content .sub-title {
+                    font-size: 16px;
+                }
+
+                .features .card-wrapper .card .card__content .button-request {
+                    background-color: transparent;
+                    width: max-content;
+                    box-shadow: none;
+                    padding: 0;
+                    transform: none;
+                    margin-top: auto;
+                
+                }
+
+
+
+/* END: features *********************************************************************************************/

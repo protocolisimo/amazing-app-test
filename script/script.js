@@ -15,5 +15,4 @@ sliderSettings = () => {
 
 document.addEventListener("DOMContentLoaded", function() {
     sliderSettings();
-    console.log('hi')
 });
