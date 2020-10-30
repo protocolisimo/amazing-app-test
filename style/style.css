@@ -139,6 +139,13 @@ body {
     color: #4B5D68;
 }
 
+hr {
+    height: 2px;
+    border: 0;
+    background-color: rgba(156, 105, 226, 0.2);
+    margin: 0;
+}
+
 /* END: general *********************************************************************************************/
 
 
@@ -274,7 +281,7 @@ header {
 /* features *********************************************************************************************/
 
 .features  {
-    margin-top: 87px;
+    margin: 87px auto 15px auto;
 }
     .features > .title,
     .features > .sub-title {
@@ -331,9 +338,27 @@ header {
                     padding: 0;
                     transform: none;
                     margin-top: auto;
-                
                 }
 
-
-
 /* END: features *********************************************************************************************/
+
+
+/* try-for-free *********************************************************************************************/
+
+.try-for-free {
+    display: flex;
+    margin: 100px auto 150px auto;
+    align-items: center;
+}
+    .try-for-free .try-text {
+        width: 100%;
+    }
+
+    .try-for-free .try-btns {
+        display: flex;
+    }
+        .try-for-free .try-btns .button:not(:last-child) {
+            margin-right: 30px;
+        }
+
+/* END: try-for-free *********************************************************************************************/
