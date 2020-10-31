@@ -10,28 +10,42 @@ sliderSettings = () => {
     });
 };
 
+popupSwitcher = (element, className) => {
+    element.classList.toggle(className)
+    document.body.classList.toggle('nonscroll');
+}
+
 popupSwitchHandler = () => {
     const sumonButton = document.querySelectorAll('button.button-request');
     const shadow = document.querySelector('.shadow');
     const modal = document.querySelector('.modal');
 
     sumonButton.forEach(button => {
-        button.addEventListener('click', function () {
-            modal.classList.toggle('open')
-            document.body.classList.toggle('nonscroll');
+        button.addEventListener('click', () => {
+            popupSwitcher(modal, 'open')
         });
     });
 
-    shadow.addEventListener('click', function () {
-        modal.classList.toggle('open')
-        document.body.classList.toggle('nonscroll');
+    shadow.addEventListener('click', () => {
+        popupSwitcher(modal, 'open')
     });
+}
+
+headerMenuSwitcherHandler = () => {
+    const header = document.querySelector('header');
+    console.log(header)
+    const burger = header.querySelector('.burger')
+
+    burger.addEventListener('click', () => {
+        popupSwitcher(header, 'menu-expandet');
+    })
 }
 
 formValidationHandler = () => {
     const form = document.querySelector('.request-demo');
-    const inputs = form.querySelectorAll('.require');
     const message = form.querySelector('.request-demo__message');
+    const inputs = form.querySelectorAll('.require');
+
     const reEmail = /\S+@\S+\.\S+/;
     const reWeb = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
@@ -39,23 +53,25 @@ formValidationHandler = () => {
     form.addEventListener('submit', (event) => {
         event.preventDefault()
 
-        form.querySelectorAll('.error').forEach(input => input.classList.remove('error'))
-
-        inputs.forEach(input => {
+        form.querySelectorAll('.error').forEach(input => input.classList.remove('error'));
+        
+        let flag = true;
+        for (const input of inputs) {
             const inputValue = input.value;
-            
-            if (!inputValue || inputValue.trim() == '') {
-                input.classList.add('error');
-                return false
-            } else if (input.classList.contains('request-demo__email') && !reEmail.test(inputValue)) {
-                input.classList.add('error');
-                return false
-            } else if (input.classList.contains('request-demo__web') && !reWeb.test(inputValue)) {
-                input.classList.add('error');
-                return false
-            }
-        })
 
+            if (
+                (!inputValue || inputValue.trim() == '')
+                || (input.classList.contains('request-demo__email') && !reEmail.test(inputValue))
+                || (input.classList.contains('request-demo__web') && !reWeb.test(inputValue))
+            ) {
+                input.classList.add('error');
+                flag = false;
+                break
+            }
+        }
+
+        if (!flag) return
+        
         form.submit()
     });
 
@@ -69,7 +85,8 @@ formValidationHandler = () => {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    sliderSettings();
-    popupSwitchHandler();
+    headerMenuSwitcherHandler();
     formValidationHandler();
+    popupSwitchHandler();
+    sliderSettings();
 });
