@@ -10,7 +10,7 @@ sliderSettings = () => {
     });
 };
 
-popupSwithHandler = () => {
+popupSwitchHandler = () => {
     const sumonButton = document.querySelectorAll('button.button-request');
     const shadow = document.querySelector('.shadow');
     const modal = document.querySelector('.modal');
@@ -28,27 +28,48 @@ popupSwithHandler = () => {
     });
 }
 
-
 formValidationHandler = () => {
     const form = document.querySelector('.request-demo');
-    const name = form.querySelector('.request-demo__name')
-    const email = form.querySelector('.request-demo__email')
-    const web = form.querySelector('.request-demo__web')
+    const inputs = form.querySelectorAll('.require');
+    const message = form.querySelector('.request-demo__message');
+    const reEmail = /\S+@\S+\.\S+/;
+    const reWeb = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
+    // require fields
     form.addEventListener('submit', (event) => {
         event.preventDefault()
-        if (!name.value) {
-            name.classList.add('error')
-        } else if (!email.value) {
-            email.classList.add('error')
-        } else if (!web.value) {
-            web.classList.add('error')
-        }
-    })
+
+        form.querySelectorAll('.error').forEach(input => input.classList.remove('error'))
+
+        inputs.forEach(input => {
+            const inputValue = input.value;
+            
+            if (!inputValue || inputValue.trim() == '') {
+                input.classList.add('error');
+                return false
+            } else if (input.classList.contains('request-demo__email') && !reEmail.test(inputValue)) {
+                input.classList.add('error');
+                return false
+            } else if (input.classList.contains('request-demo__web') && !reWeb.test(inputValue)) {
+                input.classList.add('error');
+                return false
+            }
+        })
+
+        form.submit()
+    });
+
+    // message limitation
+    
+    message.oninput = () => {
+        if (message.value.length >= 180) {
+            message.classList.add('error')
+        } else message.classList.remove('error')
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     sliderSettings();
-    popupSwithHandler();
+    popupSwitchHandler();
     formValidationHandler();
 });

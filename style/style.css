@@ -522,6 +522,10 @@ hr {
                 color: #212353;
                 transition: .3s;
             }
+                .modal .desktope-data-popup .request-demo input.error {
+                    border-color: #ff2400;
+                }
+                
                 .modal .desktope-data-popup .request-demo input::placeholder,
                 .modal .desktope-data-popup .request-demo textarea::placeholder {
                     color: #212353;
@@ -569,6 +573,11 @@ hr {
 
                 .modal .desktope-data-popup .request-demo .request-message textarea:focus {
                     background-image: linear-gradient(white, white 72px, rgba(156, 105, 226, 1), rgba(156, 105, 226, 1) 73px, white 73px, white 159px, rgba(156, 105, 226, 1) 159px, rgba(156, 105, 226, 1) 160px, white, white 1px)
+                }
+
+                .modal .desktope-data-popup .request-demo .request-message textarea.error {
+                    border-color: #ff2400;
+                    background-image: linear-gradient(white, white 72px, #ff2400, #ff2400 73px, white 73px, white 159px, #ff2400 159px, #ff2400 160px, white, white 1px) ;
                 }
     
     .modal.open {
